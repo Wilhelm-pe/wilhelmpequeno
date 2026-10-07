@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wilhelm Pequeno · Desenvolvimento & Automações</title>
+<meta name="description" content="Sistemas web, integrações, assistentes de IA no WhatsApp e automações para empresas. Fale comigo pelo WhatsApp ou e-mail.">
+<meta name="theme-color" content="#0C2D52">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Wilhelm Pequeno · Desenvolvimento & Automações">
+<meta property="og:description" content="Sistemas web, integrações, assistentes de IA no WhatsApp e automações para empresas.">
+<meta property="og:url" content="https://wilhelmpequeno.vercel.app/">
+<meta property="og:image" content="https://wilhelmpequeno.vercel.app/foto.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230C2D52'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='%23D9B45A' text-anchor='middle'%3EWP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0C2D52;
+    --navy-2: #0a2443;
+    --navy-3: #133a66;
+    --ink: #0B1E36;
+    --gold: #D9B45A;
+    --gold-2: #B8933E;
+    --texto: #EAF0F7;
+    --suave: #A9B7C9;
+    --linha: rgba(255,255,255,.10);
+    --cartao: rgba(255,255,255,.05);
+    --whats: #25D366;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--texto);
+    background:
+      radial-gradient(900px 500px at 15% -10%, rgba(217,180,90,.16), transparent 60%),
+      radial-gradient(800px 600px at 110% 10%, rgba(37,99,175,.25), transparent 60%),
+      linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
+    background-attachment: fixed;
+    padding: calc(env(safe-area-inset-top, 0px) + 28px) 16px calc(env(safe-area-inset-bottom, 0px) + 32px);
+  }
+  .pagina { max-width: 460px; margin: 0 auto; }
+
+  /* ---------- topo ---------- */
+  .topo { text-align: center; }
+  .foto {
+    width: 128px; height: 128px; margin: 0 auto 18px; border-radius: 50%;
+    padding: 4px; background: linear-gradient(135deg, var(--gold), var(--gold-2) 50%, #fff3 100%);
+    box-shadow: 0 12px 40px rgba(0,0,0,.35);
+  }
+  .foto img, .foto .iniciais {
+    width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;
+    border: 3px solid var(--navy);
+  }
+  .foto .iniciais {
+    display: grid; place-items: center; background: var(--navy-3);
+    font-size: 42px; font-weight: 800; color: var(--gold); letter-spacing: 1px;
+  }
+  h1 { margin: 0; font-size: 1.85rem; font-weight: 800; letter-spacing: -.02em; }
+  .cargo { margin: 6px 0 0; font-size: 1.02rem; font-weight: 600; color: var(--gold); }
+  .marca {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 12px;
+    font-size: .82rem; color: var(--suave); padding: 6px 12px; border-radius: 999px;
+    border: 1px solid var(--linha); background: var(--cartao);
+  }
+  .marca b { color: var(--texto); font-weight: 700; }
+  .marca .ponto { width: 7px; height: 7px; border-radius: 50%; background: var(--whats); box-shadow: 0 0 0 3px rgba(37,211,102,.18); }
+  .bio { margin: 16px auto 0; max-width: 380px; color: var(--suave); line-height: 1.55; font-size: .97rem; }
+
+  /* ---------- ações ---------- */
+  .acoes { display: grid; gap: 10px; margin-top: 26px; }
+  .botao {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 15px 18px; border-radius: 14px; font-weight: 700; font-size: 1rem;
+    text-decoration: none; border: 0; cursor: pointer; font-family: inherit;
+    transition: transform .12s ease, filter .12s ease, background .12s ease;
+  }
+  .botao:active { transform: scale(.98); }
+  .botao svg { width: 20px; height: 20px; flex: none; }
+  .botao.whats { background: var(--whats); color: #062d16; }
+  .botao.whats:hover { filter: brightness(1.06); }
+  .botao.email { background: var(--gold); color: var(--ink); }
+  .botao.email:hover { filter: brightness(1.06); }
+  .secundarios { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .botao.leve { background: var(--cartao); color: var(--texto); border: 1px solid var(--linha); font-weight: 600; font-size: .93rem; padding: 13px 12px; }
+  .botao.leve:hover { background: rgba(255,255,255,.09); }
+
+  /* ---------- seções ---------- */
+  section { margin-top: 34px; }
+  h2 {
+    margin: 0 0 14px; font-size: .78rem; font-weight: 700; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--gold);
+  }
+  .servicos { display: grid; gap: 10px; }
+  .servico {
+    display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start;
+    padding: 16px; border-radius: 16px; background: var(--cartao); border: 1px solid var(--linha);
+  }
+  .icone {
+    width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center;
+    background: rgba(217,180,90,.14); color: var(--gold);
+  }
+  .icone svg { width: 22px; height: 22px; }
+  .servico h3 { margin: 2px 0 4px; font-size: 1rem; font-weight: 700; }
+  .servico p { margin: 0; color: var(--suave); font-size: .9rem; line-height: 1.5; }
+
+  .passos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .passo { text-align: center; padding: 14px 6px; border-radius: 14px; background: var(--cartao); border: 1px solid var(--linha); }
+  .passo b { display: grid; place-items: center; width: 28px; height: 28px; margin: 0 auto 8px; border-radius: 50%; background: var(--gold); color: var(--ink); font-size: .85rem; }
+  .passo span { font-size: .8rem; color: var(--suave); line-height: 1.3; display: block; }
+
+  .contato { display: grid; gap: 8px; }
+  .linha-contato {
+    display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 14px;
+    background: var(--cartao); border: 1px solid var(--linha); color: var(--texto); text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+  .linha-contato:hover { background: rgba(255,255,255,.09); }
+  .linha-contato svg { width: 20px; height: 20px; color: var(--gold); flex: none; }
+  .linha-contato small { display: block; color: var(--suave); font-size: .78rem; }
+
+  .qr { text-align: center; }
+  .qr .caixa { display: inline-block; background: #fff; padding: 14px; border-radius: 16px; }
+  .qr #codigo-qr { width: 168px; height: 168px; }
+  .qr #codigo-qr img, .qr #codigo-qr canvas { width: 168px !important; height: 168px !important; }
+  .qr p { margin: 10px 0 0; color: var(--suave); font-size: .85rem; }
+
+  footer { margin-top: 36px; text-align: center; color: var(--suave); font-size: .82rem; line-height: 1.6; }
+  footer b { color: var(--gold); }
+
+  .aviso {
+    position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 20px); transform: translate(-50%, 20px);
+    background: #fff; color: var(--ink); padding: 10px 16px; border-radius: 10px; font-size: .9rem; font-weight: 600;
+    opacity: 0; pointer-events: none; transition: all .2s ease; box-shadow: 0 8px 30px rgba(0,0,0,.3);
+  }
+  .aviso.mostrar { opacity: 1; transform: translate(-50%, 0); }
+
+  @media (max-width: 380px) {
+    h1 { font-size: 1.6rem; }
+    .passos { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<main class="pagina">
+
+  <header class="topo">
+    <div class="foto">
+      <img src="foto.jpg" alt="Foto de Wilhelm Pequeno" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'iniciais',textContent:'WP'}))">
+    </div>
+    <h1>Wilhelm Pequeno</h1>
+    <p class="cargo">Desenvolvimento &amp; Automações para Negócios</p>
+    <div class="marca"><span class="ponto"></span>Disponível para novos projetos</div>
+    <p class="bio">Transformo processos manuais em sistemas que trabalham sozinhos: atendimento com Inteligência Artificial no WhatsApp, sistemas web sob medida e automações que economizam horas da sua equipe.</p>
+  </header>
+
+  <div class="acoes">
+    <a class="botao whats" id="botao-whats" href="https://wa.me/5512981064242?text=Ol%C3%A1%2C%20Wilhelm!%20Vi%20seu%20cart%C3%A3o%20digital%20e%20quero%20conversar%20sobre%20automatizar%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.6.1c-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1s0-.4.1-.6l.4-.5c.2-.2.2-.3.3-.5s0-.4 0-.5-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.5 1.1 2.9 1.2 3.1 2.1 3.2 5.1 4.5c.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4s.2-1.3.2-1.4-.3-.2-.5-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+      Conversar no WhatsApp
+    </a>
+    <a class="botao email" href="mailto:wilhelm.pequeno@gmail.com?subject=Contato%20pelo%20cart%C3%A3o%20digital">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+      Enviar e-mail
+    </a>
+    <div class="secundarios">
+      <button class="botao leve" id="botao-salvar" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/><path d="M19 8v6M16 11h6"/></svg>
+        Salvar contato
+      </button>
+      <button class="botao leve" id="botao-compartilhar" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
+        Compartilhar
+      </button>
+    </div>
+  </div>
+
+  <section>
+    <h2>O que eu faço</h2>
+    <div class="servicos">
+      <article class="servico">
+        <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.8 7L4 20l1.1-4.6A8 8 0 1 1 21 12z"/><path d="M9 11h.01M12 11h.01M15 11h.01"/></svg></div>
+        <div><h3>Assistentes de IA no WhatsApp</h3><p>Atendimento 24h que tira dúvidas, agenda, confirma presença e cobra — e chama a sua equipe quando precisa.</p></div>
+      </article>
+      <article class="servico">
+        <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3M7 9h4M7 13h7"/></svg></div>
+        <div><h3>Sistemas web sob medida</h3><p>Painéis, CRMs e sistemas internos feitos para o jeito que a sua empresa trabalha.</p></div>
+      </article>
+      <article class="servico">
+        <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></div>
+        <div><h3>Integrações</h3><p>Conecto os sistemas que você já usa: Google Agenda, pagamentos (PIX/boleto), assinatura digital, ERPs e APIs.</p></div>
+      </article>
+      <article class="servico">
+        <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M4.2 7.5l2.6 1.5M17.2 15l2.6 1.5M4.2 16.5l2.6-1.5M17.2 9l2.6-1.5"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div><h3>Automações de processos</h3><p>Fluxos com N8N e Google Apps Script que eliminam tarefas repetitivas: planilhas, e-mails, relatórios e avisos automáticos.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>Como trabalho</h2>
+    <div class="passos">
+      <div class="passo"><b>1</b><span>Entendo o seu processo</span></div>
+      <div class="passo"><b>2</b><span>Desenho a solução</span></div>
+      <div class="passo"><b>3</b><span>Implanto e testo</span></div>
+      <div class="passo"><b>4</b><span>Acompanho e ajusto</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contato</h2>
+    <div class="contato">
+      <a class="linha-contato" href="https://wa.me/5512981064242" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span><small>WhatsApp</small>(12) 98106-4242</span>
+      </a>
+      <a class="linha-contato" href="mailto:wilhelm.pequeno@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <span><small>E-mail</small>wilhelm.pequeno@gmail.com</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="qr">
+    <h2>Compartilhe este cartão</h2>
+    <div class="caixa"><div id="codigo-qr" aria-label="QR Code deste cartão"></div></div>
+    <p>Aponte a câmera do celular para abrir</p>
+  </section>
+
+  <footer>
+    São José dos Campos · SP · atendimento em todo o Brasil
+  </footer>
+</main>
+
+<div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  var ENDERECO = "https://wilhelmpequeno.vercel.app/";
+
+  function avisar(texto) {
+    var el = document.getElementById("aviso");
+    el.textContent = texto;
+    el.classList.add("mostrar");
+    clearTimeout(avisar.t);
+    avisar.t = setTimeout(function () { el.classList.remove("mostrar"); }, 2200);
+  }
+
+  // Salvar contato: gera um vCard e baixa (o celular oferece "Adicionar aos contatos").
+  document.getElementById("botao-salvar").addEventListener("click", function () {
+    var vcard = [
+      "BEGIN:VCARD",
+      "VERSION:3.0",
+      "N:Pequeno;Wilhelm;;;",
+      "FN:Wilhelm Pequeno",
+      "TITLE:Desenvolvimento & Automações para Negócios",
+      "TEL;TYPE=CELL,VOICE:+5512981064242",
+      "EMAIL;TYPE=INTERNET:wilhelm.pequeno@gmail.com",
+      "URL:" + ENDERECO,
+      "NOTE:Sistemas web, integrações, assistentes de IA no WhatsApp e automações.",
+      "END:VCARD"
+    ].join("\r\n");
+    var blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+    var link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "Wilhelm-Pequeno.vcf";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(function () { URL.revokeObjectURL(link.href); }, 1000);
+  });
+
+  // Compartilhar: menu nativo do celular; no computador, copia o link.
+  document.getElementById("botao-compartilhar").addEventListener("click", function () {
+    var dados = {
+      title: "Wilhelm Pequeno · Desenvolvimento & Automações",
+      text: "Cartão digital de Wilhelm Pequeno — sistemas, integrações, IA no WhatsApp e automações.",
+      url: ENDERECO
+    };
+    if (navigator.share) {
+      navigator.share(dados).catch(function () {});
+    } else if (navigator.clipboard) {
+      navigator.clipboard.writeText(ENDERECO).then(
+        function () { avisar("Link copiado!"); },
+        function () { avisar(ENDERECO); }
+      );
+    } else {
+      avisar(ENDERECO);
+    }
+  });
+
+  // QR Code do próprio cartão.
+  if (window.QRCode) {
+    new QRCode(document.getElementById("codigo-qr"), {
+      text: ENDERECO, width: 168, height: 168,
+      colorDark: "#0C2D52", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.M
+    });
+  }
+</script>
+</body>
+</html>
