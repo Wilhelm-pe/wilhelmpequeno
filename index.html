@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Wilhelm Pequeno · Desenvolvimento & Automações</title>
-<meta name="description" content="Sistemas web, integrações, assistentes de IA no WhatsApp e automações para empresas. Fale comigo pelo WhatsApp ou e-mail.">
+<meta name="description" content="Leve o seu negócio a outro nível: atendimento com IA no WhatsApp, sistemas web, integrações, automações e análise de dados.">
 <meta name="theme-color" content="#0C2D52">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Wilhelm Pequeno · Desenvolvimento & Automações">
@@ -108,6 +108,30 @@
   .servico h3 { margin: 2px 0 4px; font-size: 1rem; font-weight: 700; }
   .servico p { margin: 0; color: var(--suave); font-size: .9rem; line-height: 1.5; }
 
+  .impacto {
+    margin-top: 30px; padding: 22px 20px; border-radius: 20px;
+    background: linear-gradient(145deg, rgba(217,180,90,.20), rgba(217,180,90,.04) 60%);
+    border: 1px solid rgba(217,180,90,.35);
+  }
+  .impacto h2 { margin-bottom: 8px; }
+  .impacto .titulo { margin: 0; font-size: 1.45rem; font-weight: 800; line-height: 1.2; letter-spacing: -.01em; }
+  .impacto .titulo em { font-style: normal; color: var(--gold); }
+  .impacto .sub { margin: 10px 0 0; color: var(--suave); font-size: .94rem; line-height: 1.55; }
+  .ganhos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
+  .ganho { padding: 14px 12px; border-radius: 14px; background: rgba(10,36,67,.55); border: 1px solid var(--linha); }
+  .ganho svg { width: 22px; height: 22px; color: var(--gold); }
+  .ganho h3 { margin: 8px 0 4px; font-size: .95rem; font-weight: 700; }
+  .ganho p { margin: 0; color: var(--suave); font-size: .82rem; line-height: 1.45; }
+
+  .chamada {
+    margin-top: 34px; padding: 26px 20px; border-radius: 20px; text-align: center;
+    background: radial-gradient(400px 200px at 50% 0%, rgba(37,211,102,.18), transparent 70%), var(--cartao);
+    border: 1px solid var(--linha);
+  }
+  .chamada .titulo { margin: 0; font-size: 1.3rem; font-weight: 800; line-height: 1.25; }
+  .chamada p { margin: 10px auto 18px; max-width: 360px; color: var(--suave); font-size: .93rem; line-height: 1.55; }
+  .chamada .botao { max-width: 340px; margin: 0 auto; }
+
   .passos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
   .passo { text-align: center; padding: 14px 6px; border-radius: 14px; background: var(--cartao); border: 1px solid var(--linha); }
   .passo b { display: grid; place-items: center; width: 28px; height: 28px; margin: 0 auto 8px; border-radius: 50%; background: var(--gold); color: var(--ink); font-size: .85rem; }
@@ -142,6 +166,7 @@
   @media (max-width: 380px) {
     h1 { font-size: 1.6rem; }
     .passos { grid-template-columns: repeat(2, 1fr); }
+    .ganhos { grid-template-columns: 1fr; }
   }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
@@ -180,6 +205,44 @@
     </div>
   </div>
 
+  <section class="impacto">
+    <h2>Para quem quer crescer</h2>
+    <p class="titulo">Leve o seu negócio a <em>outro nível</em></p>
+    <p class="sub">Tecnologia trabalhando por você enquanto a sua equipe cuida do que realmente importa: os clientes.</p>
+    <div class="ganhos">
+      <div class="ganho">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        <h3>Atendimento humanizado</h3>
+        <p>Respostas na hora, 24h por dia, com o jeito de falar da sua empresa — e uma pessoa assume quando precisa.</p>
+      </div>
+      <div class="ganho">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <h3>Menos tarefas repetitivas</h3>
+        <p>Agendamentos, lembretes, cobranças e planilhas no automático. Sua equipe ganha horas toda semana.</p>
+      </div>
+      <div class="ganho">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 17v-4M12 17V8M16 17v-6"/></svg>
+        <h3>Controle total</h3>
+        <p>Painéis com o que acontece no seu negócio em tempo real: atendimentos, agenda, vendas e pagamentos.</p>
+      </div>
+      <div class="ganho">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M12 7.5v4M12 11.5 6.5 16M12 11.5l5.5 4.5"/></svg>
+        <h3>Ecossistema integrado</h3>
+        <p>WhatsApp, agenda, financeiro e sistemas conversando entre si — sem retrabalho e sem informação perdida.</p>
+      </div>
+      <div class="ganho">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg>
+        <h3>Decisões com base em dados</h3>
+        <p>Análise dos números do seu negócio: o que vende, onde perde clientes e onde investir.</p>
+      </div>
+      <div class="ganho">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>
+        <h3>Cresça sem inchar a equipe</h3>
+        <p>Atenda mais clientes com a mesma estrutura: a tecnologia absorve o volume.</p>
+      </div>
+    </div>
+  </section>
+
   <section>
     <h2>O que eu faço</h2>
     <div class="servicos">
@@ -199,6 +262,10 @@
         <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M4.2 7.5l2.6 1.5M17.2 15l2.6 1.5M4.2 16.5l2.6-1.5M17.2 9l2.6-1.5"/><circle cx="12" cy="12" r="3"/></svg></div>
         <div><h3>Automações de processos</h3><p>Fluxos com N8N e Google Apps Script que eliminam tarefas repetitivas: planilhas, e-mails, relatórios e avisos automáticos.</p></div>
       </article>
+      <article class="servico">
+        <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16v-3M11 16V9M15 16v-5M19 16V6"/></svg></div>
+        <div><h3>Análise de dados e dashboards</h3><p>Seus dados organizados em painéis claros e relatórios automáticos, para decidir com números e não no achismo.</p></div>
+      </article>
     </div>
   </section>
 
@@ -210,6 +277,15 @@
       <div class="passo"><b>3</b><span>Implanto e testo</span></div>
       <div class="passo"><b>4</b><span>Acompanho e ajusto</span></div>
     </div>
+  </section>
+
+  <section class="chamada">
+    <p class="titulo">Pronto para dar o próximo passo?</p>
+    <p>Me conte como o seu negócio funciona hoje. Em uma conversa rápida eu mostro o que dá para automatizar e quanto tempo você pode economizar.</p>
+    <a class="botao whats" href="https://wa.me/5512981064242?text=Ol%C3%A1%2C%20Wilhelm!%20Quero%20levar%20meu%20neg%C3%B3cio%20a%20outro%20n%C3%ADvel.%20Podemos%20conversar%3F" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.6.1c-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1s0-.4.1-.6l.4-.5c.2-.2.2-.3.3-.5s0-.4 0-.5-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.5 1.1 2.9 1.2 3.1 2.1 3.2 5.1 4.5c.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4s.2-1.3.2-1.4-.3-.2-.5-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+      Quero levar meu negócio a outro nível
+    </a>
   </section>
 
   <section>
